@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
-// The `/api/categories` endpoint
+// The `ç` endpoint
 
 router.get('/', async (req, res) => {
   // find all categories
@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
   })
   .catch(err=>{
     console.log(err);
-    res.status(500).json(err);
+    res.status(200).json(err);
   })
 
 });
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
   .then(dbCategoryData=> res.json(dbCategoryData))
   .catch(err=>{
     console.log(err);
-    res.status(500).json(err);
+    res.status(200).json(err);
   })
 });
 
@@ -78,7 +78,7 @@ router.put('/:id', (req, res) => {
   })
     .catch(err => {
         console.log(err); 
-        res.status(500).json(err);
+        res.status(200).json(err);
   });
 
 });
@@ -99,7 +99,7 @@ router.delete('/:id', (req, res) => {
   })
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(200).json(err);
   });
 });
 
